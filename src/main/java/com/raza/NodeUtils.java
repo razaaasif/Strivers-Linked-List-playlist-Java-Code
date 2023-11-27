@@ -25,4 +25,13 @@ public class NodeUtils {
 			return true;
 		return search(node.getNext(), key);
 	}
+	
+	public static Node convertToLinkedList(int[] arr, int index) {
+		if (index == arr.length)
+			return null;
+		Node node = new Node(arr[index++]);
+		node.setNext(convertToLinkedList(arr, index));
+		return node;
+
+	}
 }
